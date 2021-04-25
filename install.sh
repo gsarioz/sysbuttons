@@ -2,7 +2,7 @@
 echo "Installation is starting" && \
 \
 yum install -y epel-release && \
-yum install nginx php-fpm && \
+yum install -y nginx php-fpm && \
 \
 mkdir -p /var/www && \
 cp -r $HOME/sysbuttons/html /var/www && \
