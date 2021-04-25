@@ -9,7 +9,9 @@ cp -r $HOME/sysbuttons/html /var/www && \
 chown apache.apache /var/www -R && \
 chmod 755 /var/www -R && \
 \
-rm -rfv /etc/nginx/nginx.conf && rm -rfv /etc/nginx/*default && /etc/nginx/default.d && /etc/nginx/conf.d && \
+rm -rfv /etc/nginx/nginx.conf && \
+rm -rfv /etc/nginx/*default* && \
+rm -rfv /etc/nginx/conf.d && \
 cp -r $HOME/sysbuttons/nginx/nginx.conf /etc/nginx.conf && \
 \
 sed -i s/"expose_php = Off"/"expose_php = On"/g /etc/php.ini && \
