@@ -17,9 +17,9 @@ cp -r $HOME/sysbuttons/nginx/nginx.conf /etc/nginx.conf && \
 sed -i s/"expose_php = Off"/"expose_php = On"/g /etc/php.ini && \
 sed -i s/".php3"/".html"/g /etc/php-fpm.d/www.conf && \
 \
-systemctl enable nginx \
-systemctl restart nginx \
-systemctl enable php-fpm \ 
-systemctl restart nginx \
+systemctl enable nginx && \
+systemctl restart nginx && \
+systemctl enable php-fpm && \ 
+systemctl restart nginx && \
 \
 echo "Installation is Completed"
