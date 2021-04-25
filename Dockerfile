@@ -27,8 +27,9 @@ sed -i s/";security"/"security"/g /etc/php-fpm.d/www.conf && \
 \
 echo "Installation is Completed"
 
-RUN touch /tmp/startup.sh && chmod 777 /tmp/startup.sh && echo "#!/bin/bash" >> /tmp/startup.sh && echo "/usr/sbin/php-fpm &" >> /tmp/startup.sh && echo "/usr/sbin/nginx &" >> /tmp/startup.sh
+RUN touch /tmp/startup.sh && chmod 777 /tmp/startup.sh && echo "#!/bin/bash" >> /tmp/startup.sh && echo "/usr/sbin/nginx -g 'daemon off;' &" >> /tmp/startup.sh && echo "/usr/sbin/php-fpm" >> /tmp/startup.sh && echo "#EOF#" >> /tmp/startup.sh 
 
 WORKDIR /root
 
+#CMD ["/usr/sbin/init"]
 CMD ["/tmp/startup.sh"]
